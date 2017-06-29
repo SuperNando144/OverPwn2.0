@@ -1,100 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ptBR">
 	<head>
 		<meta charset="utf-8">
-		<title>Overpwn - Seu site de notícias de Overwatch!</title>
+		<title>Overpwn - Seu site de notícias de Overwatch! - Heróis</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<script src="lib/jquery/jquery.min.js"></script>
 		<link href="css/overpwn.css" rel="stylesheet">
-		<script src="js/overpwn.js"></script>
-		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	</head>
 	<body class="alignmentBody">
-		<nav class="navbar navbar-inverse sidebar" role="navigation">
-			<div class="container-fluid ">
-				<!-- Brand and toggle get grouped for better mobile display -->
+		<!-- Criação da navbar -->
+		<nav class="navbar navbar-default" id="navbarDesktop">
+			<div class="container-fluid">
+				<!-- Criação do icone na navbar -->
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">OverPwn</a>
+					<a class="navbar-brand" href="index.html"><img src="img/overpwn-logo.png" width="200" alt="Logotipo"></a>
 				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-						<li ><a href="heroes.html">Heróis<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-						<li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-							<ul class="dropdown-menu forAnimate" role="menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-								<li class="divider"></li>
-								<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-						<li ><a href="#">Profile<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-						<li ><a href="#">Messages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Heróis <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-							<ul class="dropdown-menu forAnimate" role="menu">
-								<li><a href="ana.html"><img src="Ana_link.png" width="30" alt="Ana">Ana</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-								<li class="divider"></li>
-								<li><a href="#">One more separated link</a></li>
-							</ul>
-						</li>
+				<!-- Criação do link Home na navbar -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav" id="navbarItems">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#">Heróis</a></li>
+						<li><a href="winrates.html">Estastíticas</a></li>
 					</ul>
+					
+					</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+				<div id="mySidenav" class="sidenav">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<a href="index.html">Home</a>
+					<a href="heroes.html">Heróis</a></a>
+					<a href="winrates.html">Estastíticas</a>
 				</div>
-			</div>
-		</nav>
-		<div id="tableHeroes">
-			<table class="table">
-				<thead class="thead-inverse">
-					<tr>
-						<td>Nome do Herói</td>
-						<td>Ícone</td>
-						<td>Função</td>
-						<td>Forte contra</td>
-						<td>Fraco contra</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr scope="row">
-						<td>Ana</td>
-						<td><img src="img/hero_icons/Ana.png" class="tableHeroesImages" alt="Ana"></td>
-						<td><img src="img/role_icons/Support.png" class="tableHeroesImages" alt="Support">Suporte</td>
-						<td><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Lucio.png" class="tableHeroesImages" alt="Lucio"><br><img src="img/hero_icons/Zenyatta.png" class="tableHeroesImages" alt="Zenyatta"></td>
-						<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
-					</tr>
-					<tr scope="row">
-						<td>Ana</td>
-						<td><img src="img/hero_icons/Ana.png" class="tableHeroesImages" alt="Ana"></td>
-						<td>Suporte</td>
-						<td><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Lucio.png" class="tableHeroesImages" alt="Lucio"><br><img src="img/hero_icons/Zenyatta.png" class="tableHeroesImages" alt="Zenyatta"></td>
-						<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
-					</tr>
-					<tr scope="row">
-						<td>Ana</td>
-						<td><img src="img/hero_icons/Ana.png" class="tableHeroesImages" alt="Ana"></td>
-						<td>Suporte</td>
-						<td><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Lucio.png" class="tableHeroesImages" alt="Lucio"><br><img src="img/hero_icons/Zenyatta.png" class="tableHeroesImages" alt="Zenyatta"></td>
-						<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</body>
-</html>
+				<div id="main">
+					<span style="font-size:30px;cursor:pointer" onclick="openNav()" id="buttonOpen">&#9776; <img src="img/overpwn-logo.png" width="200" alt="Logotipo"></span>
+					<div class="filters">
+						<select id="heroes-select" class="form-control" onchange="filterByName()">
+							<option value="all" selected="">Todos os heróis</option>
+							<option value="Ana">Ana</option>
+							<option value="Basion">Bastion </option>
+							<option value="DVA">D.VA</option>
+							<option value="Genji">Genji</option>
+							<option value= "Hanzo">Hanzo</option>
+							<option value="Junkrat">Junkrat</option>
+							<option value="Lucio">Lúcio</option>
+							<option value ="McCree">McCree</option>
+							<option value="Mei">Mei</option>
+							<option value="Mercy">Mercy</option>
+							<option value="Orisa">Orisa</option>
+							<option value="Pharah">Pharah</option>
+							<option value="Reaper">Reaper </option>
+							<option value="Reinhardt">Reinhardt</option>
+							<option value="Roadhog">Roadhog</option>
+							<option value="Soldier76" >Soldado: 76</option>
+							<option value="Sombra">Sombra</option>
+							<option value="Torbjorn">Torbjörn</option>
+							<option value="Tracer">Tracer</option>
+							<option value="Widowmaker">Widowmaker</option>
+							<option value="Winston">Winston</option>
+							<option value="Zarya">Zarya</option>
+							<option value="Zenyatta">Zenyatta</option>
+						</select>
+						<select id="role-select" class="form-control" onchange="filterByRole()">
+							<option value="all" selected="">Todas as funções</option>
+							<option value="Defensivo">Defensivo</option>
+							<option value="Ofensivo">Ofensivo</option>
+							<option value="Suporte">Suporte</option>
+							<option value="Tanque">Tanque</option>
+						</select>
+					</div>
+					<div id="tableHeroes" >
+						<table class="table" id="tableHeroData">
+							<thead class="thead-inverse">
+								<tr class="header">
+									<th>Nome do Herói</th>
+									<th>Ícone</th>
+									<th>Função</th>
+									<th>Forte contra</th>
+									<th>Fraco contra</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr scope="row">
+									<td>Ana</td>
+									<td><img src="img/hero_icons/Ana.png" class="tableHeroesImages" alt="Ana"></td>
+									<td><img src="img/role_icons/Support.png" class="tableHeroesImages" alt="Support">Suporte</td>
+									<td><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Lucio.png" class="tableHeroesImages" alt="Lucio"><br><img src="img/hero_icons/Zenyatta.png" class="tableHeroesImages" alt="Zenyatta"></td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
+								</tr>
+								<tr scope="row">
+									<td>Bastion</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"></td>
+									<td><img src="img/role_icons/Defense.png" class="tableHeroesImages" alt="Defense">Defensivo</td>
+									<td><img src="img/hero_icons/Reinhardt.png" class="tableHeroesImages" alt="Reinhardt"><br><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>D.VA</td>
+									<td><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"></td>
+									<td><img src="img/role_icons/Tank.png" class="tableHeroesImages" alt="Tank">Tanque</td>
+									<td><img src="img/hero_icons/Orisa.png" class="tableHeroesImages" alt="Orisa"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Reinhardt.png" class="tableHeroesImages" alt="Reinhardt"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Symmetra.png" class="tableHeroesImages" alt="Symmetra"><br><img src="img/hero_icons/Zenyatta.png" class="tableHeroesImages" alt="Zenyatta"></td>
+								</tr>
+								<tr scope="row">
+									<td>Genji</td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"></td>
+									<td><img src="img/role_icons/Offense.png" class="tableHeroesImages" alt="Offensive">Ofensivo</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"><br><img src="img/hero_icons/Zarya.png" class="tableHeroesImages" alt="Zarya"></td>
+								</tr>
+								<tr scope="row">
+									<td>Hanzo</td>
+									<td><img src="img/hero_icons/Hanzo.png" class="tableHeroesImages" alt="Hanzo"></td>
+									<td><img src="img/role_icons/Defense.png" class="tableHeroesImages" alt="Defensive">Defensivo</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
+								</tr>
+								<tr scope="row">
+									<td>Junkrat</td>
+									<td><img src="img/hero_icons/Junkrat.png" class="tableHeroesImages" alt="Junkrat"></td>
+									<td><img src="img/role_icons/Defense.png" class="tableHeroesImages" alt="Defense">Defensivo</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/hero_icons/McCree.png" class="tableHeroesImages" alt="McCree"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Lúcio</td>
+									<td><img src="img/hero_icons/Lucio.png" class="tableHeroesImages" alt="Lucio"></td>
+									<td><img src="img/role_icons/Support.png" class="tableHeroesImages" alt="Support">Suporte</td>
+									<td><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"><br><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/hero_icons/McCree.png" class="tableHeroesImages" alt="McCree"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"></td>
+								</tr>
+								<tr scope="row">
+									<td>McCree</td>
+									<td><img src="img/hero_icons/McCree.png" class="tableHeroesImages" alt="McCree"></td>
+									<td><img src="img/role_icons/Offense.png" class="tableHeroesImages" alt="Offense">Ofensivo</td>
+									<td><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Hanzo.png" class="tableHeroesImages" alt="Hanzo"><br><img src="img/hero_icons/Soldier76.png" class="tableHeroesImages" alt="Soldier76"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Mei</td>
+									<td><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"></td>
+									<td><img src="img/role_icons/Defense.png" class="tableHeroesImages" alt="Defense">Defensivo</td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/hero_icons/Junkrat.png" class="tableHeroesImages" alt="Junkrat"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Mercy</td>
+									<td><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"></td>
+									<td><img src="img/role_icons/Support.png" class="tableHeroesImages" alt="Support">Suporte</td>
+									<td>N/A</td>
+									<td><img src="img/hero_icons/McCree.png" class="tableHeroesImages" alt="McCree"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Orisa</td>
+									<td><img src="img/hero_icons/Orisa.png" class="tableHeroesImages" alt="Orisa"></td>
+									<td><img src="img/role_icons/Tank.png" class="tableHeroesImages" alt="Tank">Tanque</td>
+									<td><img src="img/hero_icons/Reinhardt.png" class="tableHeroesImages" alt="Reinhardt"><br><img src="img/hero_icons/Roadhog.png" class="tableHeroesImages" alt="Roadhog"><br><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"></td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Sombra.png" class="tableHeroesImages" alt="Sombra"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Pharah</td>
+									<td><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"></td>
+									<td><img src="img/role_icons/Offense.png" class="tableHeroesImages" alt="Offense">Ofensivo</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/Junkrat.png" class="tableHeroesImages" alt="Junkrat"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"></td>
+									<td><img src="img/hero_icons/Roadhog.png" class="tableHeroesImages" alt="Roadhog"><br><img src="img/hero_icons/Soldier76.png" class="tableHeroesImages" alt="Soldier76"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Reaper</td>
+									<td><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"></td>
+									<td><img src="img/role_icons/Offense.png" class="tableHeroesImages" alt="Offense">Ofensivo</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/hero_icons/Junkrat.png" class="tableHeroesImages" alt="Junkrat"><br><img src="img/hero_icons/McCree.png" class="tableHeroesImages" alt="McCree"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"></td>
+								</tr>
+								<tr scope="row">
+									<td>Reinhardt</td>
+									<td><img src="img/hero_icons/Reinhardt.png" class="tableHeroesImages" alt="Reinhardt"></td>
+									<td><img src="img/role_icons/Tank.png" class="tableHeroesImages" alt="Tank">Tanque</td>
+									<td><img src="img/hero_icons/Soldier76.png" class="tableHeroesImages" alt="Soldier76"><br><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Roadhog.png" class="tableHeroesImages" alt="Roadhog"><br><img src="img/hero_icons/Symmetra.png" class="tableHeroesImages" alt="Symmetra"></td>
+								</tr>
+								<tr scope="row">
+									<td>Roadhog</td>
+									<td><img src="img/hero_icons/Roadhog.png" class="tableHeroesImages" alt="Roadhog"></td>
+									<td><img src="img/role_icons/Tank.png" class="tableHeroesImages" alt="Tank">Tanque</td>
+									<td><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Reinhardt.png" class="tableHeroesImages" alt="Reinhardt"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
+									<td><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"><br><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"></td>
+								</tr>
+								<tr scope="row">
+									<td>Soldado: 76</td>
+									<td><img src="img/hero_icons/Soldier76.png" class="tableHeroesImages" alt="Soldier76"></td>
+									<td><img src="img/role_icons/Offense.png" class="tableHeroesImages" alt="Offense">Ofensivo</td>
+									<td><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"></td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
+								</tr>
+								<tr scope="row">
+									<td>Sombra</td>
+									<td><img src="img/hero_icons/Sombra.png" class="tableHeroesImages" alt="Sombra"></td>
+									<td><img src="img/role_icons/Offense.png" class="tableHeroesImages" alt="Offense">Ofensivo</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"></td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
+								</tr>
+								<tr scope="row">
+									<td>Symmetra</td>
+									<td><img src="img/hero_icons/Symmetra.png" class="tableHeroesImages" alt="Symmetra"></td>
+									<td><img src="img/role_icons/Support.png" class="tableHeroesImages" alt="Support">Suporte</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"><br><img src="img/hero_icons/Reinhardt.png" class="tableHeroesImages" alt="Reinhardt"></td>
+									<td><img src="img/hero_icons/Junkrat.png" class="tableHeroesImages" alt="Junkrat"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Roadhog.png" class="tableHeroesImages" alt="Roadhog"></td>
+								</tr>
+								<tr scope="row">
+									<td>Torbjörn</td>
+									<td><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"></td>
+									<td><img src="img/role_icons/Defense.png" class="tableHeroesImages" alt="Defense">Defensivo</td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Lucio.png" class="tableHeroesImages" alt="Lucio"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
+									<td><img src="img/hero_icons/Junkrat.png" class="tableHeroesImages" alt="Junkrat"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Tracer</td>
+									<td><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"></td>
+									<td><img src="img/role_icons/Offense.png" class="tableHeroesImages" alt="Offense">Ofensivo</td>
+									<td><img src="img/hero_icons/Bastion.png" class="tableHeroesImages" alt="Bastion"><br><img src="img/hero_icons/Mercy.png" class="tableHeroesImages" alt="Mercy"><br><img src="img/hero_icons/Orisa.png" class="tableHeroesImages" alt="Orisa"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/hero_icons/McCree.png" class="tableHeroesImages" alt="McCree"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Soldier76.png" class="tableHeroesImages" alt="Soldier76"></td>
+								</tr>
+								<tr scope="row">
+									<td>Widowmaker</td>
+									<td><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/role_icons/Defense.png" class="tableHeroesImages" alt="Deffense">Defensivo</td>
+									<td><img src="img/hero_icons/Orisa.png" class="tableHeroesImages" alt="Orisa"><br><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Torbjorn.png" class="tableHeroesImages" alt="Torbjorn"></td>
+									<td><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"><br><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+								</tr>
+								<tr scope="row">
+									<td>Winston</td>
+									<td><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/role_icons/Tank.png" class="tableHeroesImages" alt="Tank">Tanque</td>
+									<td><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Hanzo.png" class="tableHeroesImages" alt="Hanzo"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+									<td><img src="img/hero_icons/McCree.png" class="tableHeroesImages" alt="McCree"><br><img src="img/hero_icons/Mei.png" class="tableHeroesImages" alt="Mei"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+								<tr scope="row">
+									<td>Zarya</td>
+									<td><img src="img/hero_icons/Zarya.png" class="tableHeroesImages" alt="Zarya"></td>
+									<td><img src="img/role_icons/Tank.png" class="tableHeroesImages" alt="Tank">Tanque</td>
+									<td><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"><br><img src="img/hero_icons/Genji.png" class="tableHeroesImages" alt="Genji"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/hero_icons/Pharah.png" class="tableHeroesImages" alt="Pharah"><br><img src="img/hero_icons/Reaper.png" class="tableHeroesImages" alt="Reaper"><br><img src="img/hero_icons/Roadhog.png" class="tableHeroesImages" alt="Roadhog"></td>
+								</tr>
+								<tr scope="row">
+									<td>Zenyatta</td>
+									<td><img src="img/hero_icons/Zenyatta.png" class="tableHeroesImages" alt="Zenyatta"></td>
+									<td><img src="img/role_icons/Support.png" class="tableHeroesImages" alt="Support">Suporte</td>
+									<td><img src="img/hero_icons/DVA.png" class="tableHeroesImages" alt="DVA"><br><img src="img/hero_icons/Roadhog.png" class="tableHeroesImages" alt="Roadhog"><br><img src="img/hero_icons/Winston.png" class="tableHeroesImages" alt="Winston"></td>
+									<td><img src="img/hero_icons/Hanzo.png" class="tableHeroesImages" alt="Hanzo"><br><img src="img/hero_icons/Tracer.png" class="tableHeroesImages" alt="Tracer"><br><img src="img/hero_icons/Widowmaker.png" class="tableHeroesImages" alt="Widowmaker"></td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+				<footer>
+					<div id="direitos" class="col-xs-12"><h6>Copyright © Overpwn - Todos os direitos reservados</h6></div>
+				</footer>
+				<script src="lib/jquery/jquery.min.js"></script>
+				<script src="js/overpwn.js"></script>
+				<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+			</body>
+		</html>

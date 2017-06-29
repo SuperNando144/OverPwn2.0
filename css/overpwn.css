@@ -1,6 +1,155 @@
+
+  /* Padronização de fonte */ 
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+  font-size: 1em;
+}
+
+  /* Padronização de largura */ 
 body,html{
     height: 100%;
   }
+
+  /* Padronização de tamanho de vídeo em desktop */ 
+  #video{
+    width: 100%;
+    height: 700px;
+  }
+
+  
+  /* Estilização da navbar */ 
+#navbarItems {
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'Arial';
+  font-weight: 700;
+}
+
+  /* Estilização da área relativa a direitos autorais */ 
+
+#direitos{
+      text-align: center;
+    }
+
+  /* Media queries relativo a mostrar o mobile / desktop */ 
+  @media screen and (max-width: 981px){
+    #buttonOpen{
+      display: block;
+    }
+
+    #navbarDesktop{
+      display: none;
+    }
+
+    #info{
+      font-size: 100%;
+    }
+
+    #quote{
+      font-size: 100%;
+    }
+
+    #descWinrates{
+      font-size: 100%;
+    }
+
+    #video{
+    width: 100%;
+    height: 100%;
+  }
+
+  }
+
+  @media screen and (min-width: 981px){
+    #buttonOpen{
+      display: none;
+    }
+
+    #mySidenav{
+      display: none;
+    }
+  }
+
+  /* Relativo a coloração da tabela na página winrates */ 
+  #otherHeroes{
+    background-color: #d70206;
+    color: white;
+    font-weight: bold;
+  }
+
+  #mercy{
+    background-color: #f05b4f;
+    font-weight: bold;
+  }
+
+  #genji{
+    background-color: #f4c63d;
+    font-weight: bold;
+  }
+
+  #mccree{
+    background-color: #d17905;
+    font-weight: bold;
+  }
+
+  #lucio{
+    background-color: #453d3f;
+    font-weight: bold;
+    color: white;
+  }
+
+  #soldier76{
+    background-color: #59922b;
+    font-weight: bold;
+  }
+
+  #widowmaker{
+    background-color: #0544d3;
+    font-weight: bold;
+  }
+
+  #pharah{
+    background-color: #6b038f;
+    font-weight: bold;
+    color: white;
+  }
+
+  #roadhog{
+    background-color: #f05b4f;
+    font-weight: bold;
+  }
+
+  #hanzo{
+    background-color: #dda43a;
+    font-weight: bold;
+  }
+
+  #reinhardt{
+    background-color: #eacf7d;
+    font-weight: bold;
+  }
+
+  #dva{
+    background-color: #86797d;
+    font-weight: bold;
+  }
+
+  #ana{
+    background-color: #b2c326;
+    font-weight: bold;
+  }
+
+  #tracer{
+    background-color: #6188e2;
+    font-weight: bold;
+  }
+
+  #junkrat{
+    background-color: #a748ca;
+    font-weight: bold;
+  }
+
 
   /* remove outer padding */
   .main .row{
@@ -8,13 +157,7 @@ body,html{
     margin: 0px;
   }
 
-  /*Remove rounded coners*/
-
-  nav.sidebar.navbar {
-    border-radius: 0px;
-  }
-
-  nav.sidebar, .main{
+  .main{
     -webkit-transition: margin 200ms ease-out;
       -moz-transition: margin 200ms ease-out;
       -o-transition: margin 200ms ease-out;
@@ -40,81 +183,10 @@ body,html{
     }
 
     /*lets nav bar to be showed on mouseover*/
-    nav.sidebar:hover + .main{
+    .main{
       margin-left: 200px;
     }
 
-    /*Center Brand*/
-    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
-      margin-left: 0px;
-    }
-    /*Center Brand*/
-    nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
-      text-align: center;
-      width: 100%;
-      margin-left: 0px;
-    }
-
-    /*Center Icons*/
-    nav.sidebar a{
-      padding-right: 13px;
-    }
-
-    /*adds border top to first nav box */
-    nav.sidebar .navbar-nav > li:first-child{
-      border-top: 1px #e5e5e5 solid;
-    }
-
-    /*adds border to bottom nav boxes*/
-    nav.sidebar .navbar-nav > li{
-      border-bottom: 1px #e5e5e5 solid;
-    }
-
-    /* Colors/style dropdown box*/
-    nav.sidebar .navbar-nav .open .dropdown-menu {
-      position: static;
-      float: none;
-      width: auto;
-      margin-top: 0;
-      background-color: transparent;
-      border: 0;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
-
-    /*allows nav box to use 100% width*/
-    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
-      padding: 0 0px 0 0px;
-    }
-
-    /*colors dropdown box text */
-    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-      color: #777;
-    }
-
-    /*gives sidebar width/height*/
-    nav.sidebar{
-      width: 200px;
-      height: 100%;
-      margin-left: -160px;
-      float: left;
-      z-index: 8000;
-      margin-bottom: 0px;
-    }
-
-    /*give sidebar 100% width;*/
-    nav.sidebar li {
-      width: 100%;
-    }
-
-    /* Move nav to full on mouse over*/
-    nav.sidebar:hover{
-      margin-left: 0px;
-    }
-    /*for hiden things when navbar hidden*/
-    .forAnimate{
-      opacity: 0;
-    }
   }
 
   /* .....NavBar: Fully showing nav bar..... */
@@ -126,29 +198,70 @@ body,html{
       width: calc(100% - 200px); /*keeps 100% minus nav size*/
       margin-left: 200px;
     }
-
-    /*Show all nav*/
-    nav.sidebar{
-      margin-left: 0px;
-      float: left;
-    }
-    /*Show hidden items on nav*/
-    nav.sidebar .forAnimate{
-      opacity: 1;
-    }
   }
 
-  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
-    color: #CCC;
-    background-color: transparent;
-  }
-
-  nav:hover .forAnimate{
-    opacity: 1;
-  }
   section{
     padding-left: 15px;
   }
+
+  * {
+  box-sizing: border-box;
+}
+
+@media screen and (min-height: 450px)  {
+  span{
+    display: none;
+  }
+  }
+
+  #quote{
+    text-align: center;
+    font-style: italic;
+  }
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 
 #tableHeroes{
   text-align: center;
@@ -161,9 +274,51 @@ body,html{
 
 .tableHeroesImages{
    width: 30px;
+   height: 30px;
    margin-bottom: 10px;
 }
 
 thead{
+  display:table-header-group;
+}
+
+th{
   font-weight: bold;
+  text-align: center;
+}
+
+.filters {
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 10px;
+  align-content: center;
+}
+
+@media only screen and (max-width: 550px) {
+  .filters {
+    display: block;
+
+  }
+
+  .filters select {
+    width: 100%;
+    margin: 0 0 5px;
+  }
+}page-break-inside:avoid;
+
+/* Styles go here */
+
+footer {
+  background-color: #222;
+  color: #aaa;
+  padding: 20px;
+}
+
+h2{
+  text-align: center;
+}
+
+h6{
+    text-align: center;
+   font-style: italic;
 }

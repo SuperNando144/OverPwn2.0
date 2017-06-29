@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+	<head>
+		<meta charset="utf-8">
+		<title>Overpwn - Seu site de notícias de Overwatch! - Estatísticas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/overpwn.css" rel="stylesheet">
+		<link rel="stylesheet" href="lib/chartist/chartist.min.css">
+		
+		
+	</head>
+	<body class="alignmentBody">
+		<!-- Criação da navbar -->
+		<nav class="navbar navbar-default" id="navbarDesktop">
+			<div class="container-fluid">
+				<!-- Criação do icone na navbar -->
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html"><img src="img/overpwn-logo.png" width="200" alt="Logotipo"></a>
+				</div>
+				<!-- Criação do link Home na navbar -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav" id="navbarItems">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="heroes.html">Heróis</a></li>
+						<li><a href="#">Estastíticas</a></li>
+					</ul>
+					
+					</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+				<div id="mySidenav" class="sidenav">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<a href="index.html">Home</a>
+					<a href="heroes.html">Heróis</a></a>
+					<a href="#">Estastíticas</a>
+				</div>
+				
+			</div>
+			<div id="main">
+				<span style="font-size:30px;cursor:pointer" onclick="openNav()" id="buttonOpen">&#9776; <img src="img/overpwn-logo.png" width="200" alt="Logotipo"></span>
+				<h2 id="descWinrates">Heróis mais populares (% de escolha) - Junho de 2017</h2>
+				<div class="ct-chart ct-golden-section" id="chart1"></div>
+				<h6>Fonte: https://masteroverwatch.com/</h6>
+				<div class="filters">
+					<select id="heroes-select" class="form-control" onchange="filterByNameGraphic()">
+						<option value="all" selected="">Todos os heróis</option>
+						<option value="Ana">Ana</option>
+						<option value="Basion">Bastion </option>
+						<option value="DVA">D.VA</option>
+						<option value="Genji">Genji</option>
+						<option value= "Hanzo">Hanzo</option>
+						<option value="Junkrat">Junkrat</option>
+						<option value="Lucio">Lúcio</option>
+						<option value ="McCree">McCree</option>
+						<option value="Mei">Mei</option>
+						<option value="Mercy">Mercy</option>
+						<option value="Orisa">Orisa</option>
+						<option value="Pharah">Pharah</option>
+						<option value="Reaper">Reaper </option>
+						<option value="Reinhardt">Reinhardt</option>
+						<option value="Roadhog">Roadhog</option>
+						<option value="Soldier76" >Soldado: 76</option>
+						<option value="Sombra">Sombra</option>
+						<option value="Torbjorn">Torbjörn</option>
+						<option value="Tracer">Tracer</option>
+						<option value="Widowmaker">Widowmaker</option>
+						<option value="Winston">Winston</option>
+						<option value="Zarya">Zarya</option>
+						<option value="Zenyatta">Zenyatta</option>
+					</select>
+				</div>
+				<div class="table-responsive" id="tableHeroes" >
+					<table width="100%" class="table" id="tableHeroData" onload="setColor()">
+						<thead class="thead-inverse">
+							<tr class="header">
+								<th>Nome do Herói</th>
+								<th>Porcentagem</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr scope="row">
+								<td id="mercy">Mercy</td>
+								<td>7.29</td>
+							</tr>
+							<tr scope="row">
+								<td id="genji">Genji</td>
+								<td>6.97</td>
+							</tr>
+							<tr scope="row">
+								<td id="mccree">McCree</td>
+								<td>6.04</td>
+							</tr>
+							<tr scope="row">
+								<td id="lucio">Lúcio</td>
+								<td>5.94</td>
+							</tr>
+							<tr scope="row">
+								<td id="soldier76">Soldado: 76</td>
+								<td>5.48</td>
+							</tr>
+							<tr scope="row">
+								<td id="widowmaker">Widowmaker</td>
+								<td>5.24</td>
+							</tr>
+							<tr scope="row">
+								<td id="pharah">Pharah</td>
+								<td>5.09</td>
+							</tr>
+							<tr scope="row">
+								<td id="roadhog">Roadhog</td>
+								<td>5.07</td>
+							</tr>
+							<tr scope="row">
+								<td id="hanzo">Hanzo</td>
+								<td>4.85</td>
+							</tr>
+							<tr scope="row">
+								<td id="reinhardt">Reinhardt</td>
+								<td>4.84</td>
+							</tr>
+							<tr scope="row">
+								<td id="dva">D.Va</td>
+								<td>4.84</td>
+							</tr>
+							<tr scope="row">
+								<td id="ana">Ana</td>
+								<td>4.67</td>
+							</tr>
+							<tr scope="row">
+								<td id="tracer">Tracer</td>
+								<td>4.38</td>
+							</tr>
+							<tr scope="row">
+								<td id="junkrat">Junkrat</td>
+								<td>4.33</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes" colspan="2">Outros heróis</td>
+							</tr>
+							<tr scope="row">
+								<td colspan="2">24.96</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Zarya</td>
+								<td>4</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Reaper</td>
+								<td>3.73</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Zenyatta</td>
+								<td>3.56</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Mei</td>
+								<td>3.18</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Torbjörn</td>
+								<td>2.44</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Winston</td>
+								<td>2.4</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Symmetra</td>
+								<td>2.24</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Bastion</td>
+								<td>1.84</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Sombra</td>
+								<td>1.14</td>
+							</tr>
+							<tr scope="row">
+								<td id="otherHeroes">Orisa</td>
+								<td>0.43</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<footer>
+					<div id="direitos" class="col-xs-12"><h6>Copyright © Overpwn - Todos os direitos reservados</h6></div>
+				</footer>
+				<script src="lib/jquery/jquery.min.js"></script>
+				<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+				<script src="lib/chartist/chartist.min.js"></script>
+				<script src="js/overpwn.js"></script>
+				<script src="js/winrates.js"></script>
+			</body>
+		</html>
